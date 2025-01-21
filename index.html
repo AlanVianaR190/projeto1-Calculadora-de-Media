@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        main {
+            text-align: center;
+        }
+
+        .radio-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Espaçamento entre os elementos */
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            transform: scale(1.2); /* Aumenta o tamanho dos botões */
+            cursor: pointer;
+        }
+
+    </style>
+    <title>Média FMU</title>
+</head>
+<body>
+    <main class="principal">
+        <h1>Calcule sua Nota</h1>
+        <ul><li><p>Escolha o tipo de graduação!</p></li></ul>
+        <div class="formulario">
+            <input type="radio" name="tipo" id="botaoPresencial" value="presencial" onclick="presencial()">
+            <label for="presencial">Presencial</label>
+            <input type="radio" name="tipo" id="botaoEad" value="ead" onclick="ead()">
+            <label for="ead/híbrido">EAD/Híbrido</label>
+            <div id="continue"></div>
+        </div>
+    </main> 
+    <script type="module" src="program.js"></script>
+    <!-- O atributo type="module" é essencial para que o navegador entenda que o arquivo .js contém módulos ES6, permitindo o uso de import e export. -->
+</body>
+</html>
