@@ -25,11 +25,10 @@ function presencial(){
             resultadoExistente.remove();
         }
 
-        // revisar esta variavel, melhor instanciar a classe CalculadoraNotas
-        let resultado = CalculadoraNotas.sectionResultadoPresencial(inputA1.value, inputA5.value);
+        let calculadora = new CalculadoraNotas();
+        let resultado = calculadora.sectionResultadoPresencial(inputA1.value, inputA5.value);
         continueDiv.appendChild(resultado);
     });
-
 }
 
 function ead(){

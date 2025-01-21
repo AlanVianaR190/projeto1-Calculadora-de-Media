@@ -25,15 +25,15 @@ export class CalculadoraNotas{
     }
 
     //
-    calcularPesoA1(valor){
+    static calcularPesoA1(valor){
         return valor * 0.4;
     }
     
-    calcularPesoA5(valor){
+    static calcularPesoA5(valor){
         return valor * 0.6;
     }
     
-    calcularMedia(valor1, valor2){
+    static calcularMedia(valor1, valor2){
         return (valor1 + valor2).toFixed(1);
     }
     
@@ -45,15 +45,14 @@ export class CalculadoraNotas{
     }
 
     //
-    static sectionResultadoPresencial(){
+    sectionResultadoPresencial(valorA1, valorA5){
         let section = document.createElement("section");
         section.innerHTML = "<h2>Resultado</h2>";
 
-        // let ul1 = document.createElement("ul");
-        // let calculadora = new CalculadoraNotas();
-        // let media = calculadora.calcularMediaPresencial(valor1, valor5);
-        // ul1.innerHTML = `<li>Sua media atual é: <b>${media}</b></li>`;
-        // section.appendChild(ul1);
+        let ul1 = document.createElement("ul");
+        let media = CalculadoraNotas.calcularMediaPresencial(valorA1, valorA5);
+        ul1.innerHTML = `<li>Sua media atual é: <b>${media}</b></li>`;
+        section.appendChild(ul1);
 
         section.className = "resultado";
         return section;
