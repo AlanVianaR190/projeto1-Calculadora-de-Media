@@ -44,6 +44,14 @@ export class CalculadoraNotas{
         return media;
     }
 
+    static condicaoAluno(media){
+        if(media >= 6){
+            return "Aprovado";
+        }else{
+            return "Reprovado";
+        }
+    }
+
     //
     sectionResultadoPresencial(valorA1, valorA5){
         let section = document.createElement("section");
@@ -53,6 +61,11 @@ export class CalculadoraNotas{
         let media = CalculadoraNotas.calcularMediaPresencial(valorA1, valorA5);
         ul1.innerHTML = `<li>Sua media atual é: <b>${media}</b></li>`;
         section.appendChild(ul1);
+
+        let ul2 = document.createElement("ul");
+        let condicao = CalculadoraNotas.condicaoAluno(media);
+        ul2.innerHTML = `<li>Resultado: <b>${condicao}</b></li>`;
+        section.appendChild(ul2);
 
         section.className = "resultado";
         return section;
