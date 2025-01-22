@@ -25,9 +25,14 @@ function presencial(){
             resultadoExistente.remove();
         }
 
-        let calculadora = new CalculadoraNotas();
-        let resultado = calculadora.sectionResultadoPresencial(inputA1.value, inputA5.value);
-        continueDiv.appendChild(resultado);
+        let verificar = CalculadoraNotas.alerta(inputA1.value, inputA5.value);
+        if (verificar){
+            return;
+        } else {
+            let calculadora = new CalculadoraNotas();
+            let resultado = calculadora.sectionResultadoPresencial(inputA1.value, inputA5.value);
+            continueDiv.appendChild(resultado);
+        }
     });
 }
 
