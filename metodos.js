@@ -52,6 +52,28 @@ export class CalculadoraNotas{
         }
     }
 
+    static condicaoParaSub(condicao){
+        if(condicao == "Aprovado"){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    static notaFaltaAprovacao(valorA1) {
+        let notaA2 = ((6 - (valorA1 * 0.4)) / 0.6);
+        return notaA2.toFixed(1);
+    }
+
+    static alerta(...vals){
+        for (let val of vals){
+            if (val > 10){
+                window.alert("Atenção! O valor das notas não podem ser maior que 10!");
+                return true;
+            }
+        }
+    }
+
     //
     sectionResultadoPresencial(valorA1, valorA5){
         let section = document.createElement("section");
@@ -66,6 +88,14 @@ export class CalculadoraNotas{
         let condicao = CalculadoraNotas.condicaoAluno(media);
         ul2.innerHTML = `<li>Resultado: <b>${condicao}</b></li>`;
         section.appendChild(ul2);
+
+        let sub = CalculadoraNotas.condicaoParaSub(condicao);
+        if(sub == false){
+            let ul3 = document.createElement("ul");
+            let notaFalta = CalculadoraNotas.notaFaltaAprovacao(valorA1);
+            ul3.innerHTML = `<li>Se for possivel fazer a SUB(A6) voce precisa tirar uma nota igual ou superior á: <b>${notaFalta}</b></li>`;
+            section.appendChild(ul3);
+        }
 
         section.className = "resultado";
         return section;
