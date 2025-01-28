@@ -41,6 +41,34 @@ function ead(){
     continueDiv.style.textAlign = "left";
     continueDiv.style.fontSize = "12px";
     continueDiv.innerHTML = "<p>*Ao adicionar as notas, o sistema irá calcular a media e mostrar se o aluno foi aprovado, se sera necessário vazer a SUB(A6) ou reprovado.</p>";
+
+    let labelN1 = CalculadoraNotas.labelNota("Nota N1: ");
+    continueDiv.appendChild(labelN1);
+    let inputN1 = CalculadoraNotas.inputNota();
+    continueDiv.appendChild(inputN1);
+
+    let labelN2 = CalculadoraNotas.labelNota("Nota N2: ");
+    continueDiv.appendChild(labelN2);
+    let inputN2 = CalculadoraNotas.inputNota();
+    continueDiv.appendChild(inputN2);
+
+    let labelN3 = CalculadoraNotas.labelNota("Nota N3: ");
+    continueDiv.appendChild(labelN3);
+    let inputN3 = CalculadoraNotas.inputNota();
+    continueDiv.appendChild(inputN3);
+
+    let labelN4 = CalculadoraNotas.labelNota("Nota N4: ");
+    continueDiv.appendChild(labelN4);
+    let inputN4 = CalculadoraNotas.inputNota();
+    continueDiv.appendChild(inputN4);
+
+    let labelA5 = CalculadoraNotas.labelNota("Nota A5: ");
+    continueDiv.appendChild(labelA5);   
+    let inputA5 = CalculadoraNotas.inputNota();
+    continueDiv.appendChild(inputA5);
+
+    let calcular = CalculadoraNotas.inputCalcular();
+    continueDiv.appendChild(calcular);
 }
 
 // window.presencial = presencial;
