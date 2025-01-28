@@ -80,8 +80,8 @@ function ead(){
         if (verificar){
             return;
         } else {
-            let calculadora = new CalculadoraNotas();
-            let resultado = calculadora.sectionResultadoEAD(inputN1.value, inputN2.value, inputN3.value, inputN4.value, inputA5.value);
+            let calculadora1 = new CalculadoraNotas();
+            let resultado = calculadora1.sectionResultadoEAD(inputN1.value, inputN2.value, inputN3.value, inputN4.value, inputA5.value);
             continueDiv.appendChild(resultado);
         }
     });

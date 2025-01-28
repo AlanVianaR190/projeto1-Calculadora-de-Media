@@ -34,14 +34,14 @@ export class CalculadoraNotas{
     }
     
     static calcularMedia(valor1, valor2){
-        return (valor1 + valor2).toFixed(1);
+        return (valor1 + valor2);
     }
     
     static calcularMediaPresencial(valorA1, valorA5){
         let notaA1 = parseFloat(this.calcularPesoA1(valorA1));
         let notaA5 = parseFloat(this.calcularPesoA5(valorA5));
         let media = parseFloat(this.calcularMedia(notaA1, notaA5));
-        return media;
+        return media.toFixed(1);
     }
 
     static condicaoAluno(media){
@@ -80,13 +80,14 @@ export class CalculadoraNotas{
         for (let val of vals){
             soma += this.calcularPesoA1(val);
         }
-        return (soma / vals.length).toFixed(1);
+        return (soma / vals.length);
     }
 
-    static calcularMediaEAD(valorA1, valorA5){
+    static calcularMediaEAD(valorN1, valorN2, valorN3, valorN4, valorA5){
+        let notaA1 = parseFloat(this.calcularNotaA1(valorN1, valorN2, valorN3, valorN4));
         let notaA5 = parseFloat(this.calcularPesoA5(valorA5));
-        let media = parseFloat(this.calcularMedia(valorA1, notaA5));
-        return media;
+        let media = parseFloat(this.calcularMedia(notaA1, notaA5));
+        return media.toFixed(1);
     }
 
     //
@@ -121,8 +122,7 @@ export class CalculadoraNotas{
         section.innerHTML = "<h2>Resultado</h2>";
 
         let ul1 = document.createElement("ul");
-        let mediaA1 = CalculadoraNotas.calcularNotaA1(valorN1, valorN2, valorN3, valorN4);
-        let media = CalculadoraNotas.calcularMediaEAD(mediaA1, valorA5);
+        let media = CalculadoraNotas.calcularMediaEAD(valorN1, valorN2, valorN3, valorN4, valorA5);
         ul1.innerHTML = `<li>Sua media atual é: <b>${media}</b></li>`;
         section.appendChild(ul1);
 
