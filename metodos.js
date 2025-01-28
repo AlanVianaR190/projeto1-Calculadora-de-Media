@@ -126,6 +126,11 @@ export class CalculadoraNotas{
         ul1.innerHTML = `<li>Sua media atual é: <b>${media}</b></li>`;
         section.appendChild(ul1);
 
+        let ul2 = document.createElement("ul");
+        let condicao = CalculadoraNotas.condicaoAluno(media);
+        ul2.innerHTML = `<li>Resultado: <b>${condicao}</b></li>`;
+        section.appendChild(ul2);
+
         section.className = "resultado";
         return section;
     }
