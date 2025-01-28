@@ -69,6 +69,22 @@ function ead(){
 
     let calcular = CalculadoraNotas.inputCalcular();
     continueDiv.appendChild(calcular);
+
+    calcular.addEventListener("click", function(){
+        let resultadoExistente = window.document.querySelector("section.resultado");
+        if (resultadoExistente) {
+            resultadoExistente.remove();
+        }
+
+        let verificar = CalculadoraNotas.alerta(inputN1.value, inputN2.value, inputN3.value, inputN4.value, inputA5.value);
+        if (verificar){
+            return;
+        } else {
+            let calculadora = new CalculadoraNotas();
+            let resultado = calculadora.sectionResultadoEAD(inputN1.value, inputN2.value, inputN3.value, inputN4.value, inputA5.value);
+            continueDiv.appendChild(resultado);
+        }
+    });
 }
 
 // window.presencial = presencial;

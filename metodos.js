@@ -75,6 +75,21 @@ export class CalculadoraNotas{
     }
 
     //
+    static calcularNotaA1(... vals){
+        let soma = 0;
+        for (let val of vals){
+            soma += this.calcularPesoA1(val);
+        }
+        return (soma / vals.length).toFixed(1);
+    }
+
+    static calcularMediaEAD(valorA1, valorA5){
+        let notaA5 = parseFloat(this.calcularPesoA5(valorA5));
+        let media = parseFloat(this.calcularMedia(valorA1, notaA5));
+        return media;
+    }
+
+    //
     sectionResultadoPresencial(valorA1, valorA5){
         let section = document.createElement("section");
         section.innerHTML = "<h2>Resultado</h2>";
@@ -96,6 +111,20 @@ export class CalculadoraNotas{
             ul3.innerHTML = `<li>Se for possivel fazer a SUB(A6) voce precisa tirar uma nota igual ou superior á: <b>${notaFalta}</b></li>`;
             section.appendChild(ul3);
         }
+
+        section.className = "resultado";
+        return section;
+    }
+
+    sectionResultadoEAD(valorN1, valorN2, valorN3, valorN4, valorA5){
+        let section = document.createElement("section");
+        section.innerHTML = "<h2>Resultado</h2>";
+
+        let ul1 = document.createElement("ul");
+        let mediaA1 = CalculadoraNotas.calcularNotaA1(valorN1, valorN2, valorN3, valorN4);
+        let media = CalculadoraNotas.calcularMediaEAD(mediaA1, valorA5);
+        ul1.innerHTML = `<li>Sua media atual é: <b>${media}</b></li>`;
+        section.appendChild(ul1);
 
         section.className = "resultado";
         return section;
