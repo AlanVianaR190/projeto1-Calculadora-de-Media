@@ -90,6 +90,12 @@ export class CalculadoraNotas{
         return media.toFixed(1);
     }
 
+    static notaFaltaAprovacaoEAD(valorN1, valorN2, valorN3, valorN4){
+        let notaA1 = this.calcularNotaA1(valorN1, valorN2, valorN3, valorN4);
+        let notaA2 = ((6 - notaA1) / 0.6);
+        return notaA2.toFixed(1);
+    }
+
     //
     sectionResultadoPresencial(valorA1, valorA5){
         let section = document.createElement("section");
@@ -130,6 +136,14 @@ export class CalculadoraNotas{
         let condicao = CalculadoraNotas.condicaoAluno(media);
         ul2.innerHTML = `<li>Resultado: <b>${condicao}</b></li>`;
         section.appendChild(ul2);
+
+        let sub = CalculadoraNotas.condicaoParaSub(condicao);
+        if(sub == false){
+            let ul3 = document.createElement("ul");
+            let notaFalta = CalculadoraNotas.notaFaltaAprovacaoEAD(valorN1, valorN2, valorN3, valorN4);
+            ul3.innerHTML = `<li>Se for possivel fazer a SUB(A6) voce precisa tirar uma nota igual ou superior á: <b>${notaFalta}</b></li>`;
+            section.appendChild(ul3);
+        }
 
         section.className = "resultado";
         return section;
