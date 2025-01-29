@@ -275,6 +275,7 @@ input.botao {
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 input.botao:hover{
@@ -289,4 +290,3 @@ section.resultado{
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.502);
     margin: 20px;
 }
-

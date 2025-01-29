@@ -42,22 +42,22 @@ function ead(){
     continueDiv.style.fontSize = "12px";
     continueDiv.innerHTML = "<p>*Ao adicionar as notas, o sistema irá calcular a media e mostrar se o aluno foi aprovado, se sera necessário vazer a SUB(A6) ou reprovado.</p>";
 
-    let labelN1 = CalculadoraNotas.labelNota("Nota N1: ");
+    let labelN1 = CalculadoraNotas.labelNota("Nota N1(A1): ");
     continueDiv.appendChild(labelN1);
     let inputN1 = CalculadoraNotas.inputNota();
     continueDiv.appendChild(inputN1);
 
-    let labelN2 = CalculadoraNotas.labelNota("Nota N2: ");
+    let labelN2 = CalculadoraNotas.labelNota("Nota N2(A1): ");
     continueDiv.appendChild(labelN2);
     let inputN2 = CalculadoraNotas.inputNota();
     continueDiv.appendChild(inputN2);
 
-    let labelN3 = CalculadoraNotas.labelNota("Nota N3: ");
+    let labelN3 = CalculadoraNotas.labelNota("Nota N3(A1): ");
     continueDiv.appendChild(labelN3);
     let inputN3 = CalculadoraNotas.inputNota();
     continueDiv.appendChild(inputN3);
 
-    let labelN4 = CalculadoraNotas.labelNota("Nota N4: ");
+    let labelN4 = CalculadoraNotas.labelNota("Nota N4(A1): ");
     continueDiv.appendChild(labelN4);
     let inputN4 = CalculadoraNotas.inputNota();
     continueDiv.appendChild(inputN4);
