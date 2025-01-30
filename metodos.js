@@ -11,8 +11,10 @@ export class CalculadoraNotas{
     static inputNota(){
         let input = document.createElement("input");
         input.type = "number";
-        input.min = "0"; input.max = "10"; input.step = "0.1"; input.value = "required"; input.placeholder = "Digite a nota";
+        input.min = "0"; input.max = "10"; input.step = "0.1"; input.placeholder = "Digite a nota";
         input.className = "numero";
+        // antes não tinha este input.required = true;
+        input.required = true;
         return input;
     }    
 
