@@ -11,7 +11,7 @@ function presencial(){
     let inputA1 = CalculadoraNotas.inputNota();
     continueDiv.appendChild(inputA1);
 
-    let labelA5 = CalculadoraNotas.labelNota("Nota A5: ");
+    let labelA5 = CalculadoraNotas.labelNota("Nota A5(A6): ");
     continueDiv.appendChild(labelA5);   
     let inputA5 = CalculadoraNotas.inputNota();
     continueDiv.appendChild(inputA5);
@@ -62,7 +62,7 @@ function ead(){
     let inputN4 = CalculadoraNotas.inputNota();
     continueDiv.appendChild(inputN4);
 
-    let labelA5 = CalculadoraNotas.labelNota("Nota A5: ");
+    let labelA5 = CalculadoraNotas.labelNota("Nota A5(A6): ");
     continueDiv.appendChild(labelA5);   
     let inputA5 = CalculadoraNotas.inputNota();
     continueDiv.appendChild(inputA5);
