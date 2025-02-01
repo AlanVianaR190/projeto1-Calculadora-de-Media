@@ -4,7 +4,7 @@ function presencial(){
     let continueDiv = window.document.querySelector("div#continue");
     continueDiv.style.textAlign = "left";
     continueDiv.style.fontSize = "12px";
-    continueDiv.innerHTML = "<p>*Ao adicionar as notas, o sistema irá calcular a media e mostrar se o aluno foi aprovado, se sera necessário vazer a SUB(A6) ou reprovado. Por isso fique atento a nota e o peso da nota em trabalhos, atividades e provas.</p>";
+    continueDiv.innerHTML = "<p>&nbsp;&nbsp;&nbsp;Ao adicionar as notas o sistema calculará a média e mostrará se o aluno foi aprovado, reprovado ou caso necessário a nota que deverá ser tirada na <b>SUB(A6)</b>.<br>&nbsp;&nbsp;&nbsp;Fique atento à nota e ao peso das notas em trabalhos, atividades e provas.<br>&nbsp;&nbsp;&nbsp;O campo que não possuir valor será considerado como nota <b>0</b>.</p>";
 
     let labelA1 = CalculadoraNotas.labelNota("Nota A1:");
     continueDiv.appendChild(labelA1);
@@ -40,7 +40,7 @@ function ead(){
     let continueDiv = window.document.querySelector("div#continue");
     continueDiv.style.textAlign = "left";
     continueDiv.style.fontSize = "12px";
-    continueDiv.innerHTML = "<p>*Ao adicionar as notas, o sistema irá calcular a media e mostrar se o aluno foi aprovado, se sera necessário vazer a SUB(A6) ou reprovado.</p>";
+    continueDiv.innerHTML = "<p>&nbsp;&nbsp;&nbsp;Ao adicionar as notas o sistema calculará a média e mostrará se o aluno foi aprovado, reprovado ou caso necessário a nota que deverá ser tirada na <b>SUB(A6)</b>.<br>&nbsp;&nbsp;&nbsp;O campo que não possuir valor será considerado como nota <b>0</b>.</p>";
 
     let labelN1 = CalculadoraNotas.labelNota("Nota N1(A1): ");
     continueDiv.appendChild(labelN1);
