@@ -61,17 +61,17 @@ h2, h3, h4 {
 }
 
 a {
-    color: #15142b;
+    color: white;
     background-color: rgba(55, 41, 145, 0.1);
     padding: 0 3px;
     font-weight: 600;
     text-decoration: none;
-    border-bottom: .5px dotted #372991;
+    border-bottom: .5px dotted white
 }
 
 a:hover {
-    color: #372991;
-    border-bottom: 1px solid #372991;
+    color:gray;
+    border-bottom: 1px solid gray;
 }
 
 /* TABELAS E LISTAS */
