@@ -24,6 +24,10 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    /* --> */
+    height: auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 header, main, section, article {
@@ -301,4 +305,11 @@ section.resultado{
 .rodape > p{
     text-align: center;
     margin: 2px;
+}
+
+/* --> */
+@media (max-width: 768px) { /* Para smartphones */
+    main {
+        padding: 10px; /* Reduz o padding em dispositivos menores */
+    }
 }
